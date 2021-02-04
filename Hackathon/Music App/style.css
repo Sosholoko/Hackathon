@@ -6,7 +6,8 @@
 
 body{
     font-family: "Montserrat";
-    background: linear-gradient(blue, red);
+    background: linear-gradient(rgb(67, 67, 255), rgb(255, 82, 82));
+    cursor: none;
 }
 
 .app{
@@ -29,6 +30,61 @@ header p{
     color: white;
 }
 
+.btnrefresh{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    background: rgb(77, 77, 245);
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+    font-family: "Montserrat";
+    color: white;
+}
+
+.btnrefresh:hover{
+    cursor: none;
+}
+
+.btnrefresh:focus{
+    outline-width: 0;
+}
+
+input[type="checkbox"]{
+    padding: 10px;
+    margin-left: 30px;
+    outline-width: 0;
+    transition: 0.5s;
+
+} 
+
+input[type="checkbox"]:hover{
+  transform: scale(2.1);
+}
+
+h2{
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.music{
+    display: inline;
+    padding: 20px;
+    
+
+}
+
+
+
+label{
+    margin-left: 15px;
+    color: white;
+
+}
+
+
 .pads{
     background: lightblue;
     width: 100%;
@@ -36,35 +92,57 @@ header p{
     
 }
 
+.visual{
+    width: 100%;
+}
+
 .pads > div{
-    height: 100px;
+    height: 200px;
     width: 100px;
     flex: 1;
+    transition: 0.5s;
+}
+.pads > div:hover{
+    transform: scale(1.1);
+}
+
+.pads h1{
+    color:white;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    text-align: center;
 }
 
 .pad1{
     background: #60d394;
+    position: relative;
 }
 .pad2{
     background: #d36060;
+    position: relative;
 }
 .pad3{
     background: #c060d3;
+    position: relative;
 }
 .pad4{
     background: #d3d160;
+    position: relative;
 }
 .pad5{
     background: #6860d3;
+    position: relative;
 }
 .pad6{
     background: #83d4ff;
+    position: relative;
 }
 .visual > div{
     position: absolute;
     height: 50px;
     width: 50px;
-    border : 3px black solid;
+    /* border : 3px black solid; */
     border-radius: 50%;
     bottom: 0%;
     left: 20%;
@@ -75,15 +153,29 @@ header p{
 @keyframes jump {
     0%{
         bottom: 0%;
-        left: 20%;
+        left: 10%;
     }
     50%{
-        bottom: 50%;
+        bottom: 95%;
         left: 50%;
     }
     100%{
        bottom: 0%;
-       left: 80%;
+       left: 90%;
     }
 }
 
+.cursor{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 40%;
+    border: solid 2px white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+
+
+}

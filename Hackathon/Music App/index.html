@@ -9,34 +9,71 @@
     <title>Tap Music</title>
 </head>
 <body>
-
+<div class="cursor"></div>
 <div class = "app">
     <header>
-        <h1>Tap Music</h1>
+        <h1>Tap Tap Music ®</h1>
         <p>Make Music with only one tap</p>
+        
     </header>
+    <button class="btnrefresh" onClick="window.location.reload();">STOP MUSIC</button>
+    
+    <div class="drum">
+        <div class="kick">
+            <h2>Choose an ambiance to start with</h2>
+        <div class="music">
+            <input id="one" type="checkbox" onchange="myfunction();">
+            <label>Piano</label>
+            
+           
+            <input id="two" type="checkbox" onchange="mysecFunction();">
+            <label>Sad Guitare</label>
+           
+            
+            <input id="tree" type="checkbox" onchange="my3Function();">
+            <label>Rock Guitare</label>
+           
+            
+            <input id="four" type="checkbox" onchange="my4Function();">
+            <label>Bass Beat</label>
+            
+            <input id="five" type="checkbox" onchange="my5Function();">
+            <label>String Cello</label>
+            </div>
+            
+         </div>
+    </div>
+    
+    
     <div class="visual"></div>
     <div class="pads">
         <div class="pad1">
-            <audio class = "sound" src = "sounds/bubbles.mp3"></audio>
+            <h1>D</h1>
+            <audio class = "sound" src = "sounds/snare-acoustic01.wav"></audio>
         </div>
         <div class="pad2">
-                <audio class = "sound" src = "sounds/clay.mp3"></audio>
+                <h1>F</h1>
+                <audio class = "sound" src = "sounds/kick-electro01.wav"></audio>
         </div>
         <div class="pad3">
-                <audio class = "sound" src = "sounds/confetti.mp3"></audio>
+                <h1>G</h1>
+                <audio class = "sound" src = "sounds/tom-fm.wav"></audio>
         </div>
         <div class="pad4">
-                <audio class = "sound" src = "sounds/glimmer.mp3"></audio>
+                <h1>H</h1>
+                <audio class = "sound" src = "sounds/snare-acoustic02.wav"></audio>
         </div>
         <div class="pad5">
-                <audio class = "sound" src = "sounds/moon.mp3"></audio>
+                <h1>J</h1>
+                <audio class = "sound" src = "sounds/openhat-808.wav"></audio>
         </div>
         <div class="pad6">
-                <audio class = "sound" src = "sounds/ufo.mp3"></audio>
+                <h1>K</h1>
+                <audio class = "sound" src = "sounds/kick-808.wav"></audio>
         </div>
     </div>
 </div>
+
 
 <script src="script.js"></script>
 </body>
