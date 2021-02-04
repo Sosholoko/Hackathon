@@ -1,6 +1,10 @@
 //VARIABLES DECLARATIONS
 
 window.addEventListener('load', () => {
+    const title = document.querySelector(".title");
+    const strTitle = title.textContent;
+    const splitTitle = strTitle.split("");
+    title.textContent = "";
     const sounds = document.querySelectorAll(".sound");
     const pads = document.querySelectorAll(".pads div");
     const visual = document.querySelector(".visual");
@@ -12,7 +16,34 @@ window.addEventListener('load', () => {
         "#6860d3",
         "#83d4ff"
     ];
+    console.log(splitTitle);
     // console.log((sounds)[0]);
+
+    // TITLE ANIMATION
+
+    for( let i = 0; i < splitTitle.length; i++ ){
+        title.innerHTML += "<span> " + splitTitle[i] + " </span>";
+    }
+
+    let letter = 0;
+    let timer = setInterval(onTick, 50);
+
+    function onTick(){
+        const span = title.querySelectorAll('span')[letter];
+        span.classList.add('fade');
+        letter ++
+        if (letter === splitTitle.length){
+            complete();
+            return;
+        }
+    }
+
+    function complete(){
+        clearInterval(timer);
+        timer = null;
+    }
+
+
 
     //KEYDOWN PRESS EVENTS
     
