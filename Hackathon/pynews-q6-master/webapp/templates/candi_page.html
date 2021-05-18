@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    body{
+        color: white;
+        font-family: 'Kanit', sans-serif;
+    }
+    .tit{
+        color: #20bf6b;
+    }
+    .tit-1{
+        color: rgb(240, 97, 97);
+    }
+    .candidate_space{
+        padding-left: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    .credentials{
+        
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #543855;
+        border: 1px solid white;
+        width: 300px;
+    }
+    .credentials h3{
+        text-align: center;
+    }
+    .appearance h3{
+        text-align: center;
+    }
+    .wanted h3{
+        text-align: center;
+    }
+    .appearance{
+        /* position: relative;
+        bottom: 510px;
+        left: 400px; */
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #543855;
+        border: 1px solid white;
+        width: 300px;
+    }
+    .wanted{
+        /* position: relative;
+        bottom: 1135px;
+        left: 800px; */
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #543855;
+        border: 1px solid white;
+        width: 300px;
+        height: 650px;
+    }
+    .btnn{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        padding: 8px;
+        font-size: 20px;
+        border:none;
+        background: rgb(82, 214, 115);
+        color: white;
+
+    }
+    
+</style>
+
+<div class="block">
+    <div class="candidate_space">
+        <div class="credentials">
+            <h3 class="tit">General Infos</h3> <br><br>
+            Profile N°{{candi.id}}<br>
+            Sexe : {{candi.sexe}}<br>
+            Firstname : {{candi.firstname}}<br>
+            Lastname : {{candi.lastname}}<br><br>
+            Phone Number : +972 {{candi.phone}}<br>
+            Mail : {{candi.mail}}<br>
+            Age : {{candi.age}}<br>
+            Height : {{candi.height}}<br><br>
+            Living City : {{candi.location}}<br>
+            Nationality : {{candi.nationality}}<br>
+            Origin : {{candi.origin}}<br><br>
+            Frequented School : {{candi.school}}<br>
+            Desired Situation : {{candi.future_job}}<br>
+            Eye color : {{candi.eye_color}}<br>
+            Wanted Eye color : {{candi.eye_color_1}}<br>
+
+
+        </div>
+        <div class="appearance">
+            <h3 class="tit">Physical Appearance</h3> <br><br>
+            Eye Color : {{candi.eye_color}}<br>
+            Hair Color : {{candi.hair_color}}<br>
+            Body Size : {{candi.body}}<br><br>
+            <h3>Spiritual Level</h3><br><br>
+            Level of Religion : {{candi.religion}}<br>
+            Limud Torah : {{candi.torah}}<br>
+            Jewish Status : {{candi.jew_status}}<br><br>
+            <h3>Family Situation</h3><br><br>
+            Father Situation :{{candi.father_job}}<br>
+            Mother Situation :{{candi.mother_job}}<br>
+            Father Origin :{{candi.father_origin}}<br>
+            Mother Origin :{{candi.mother_origin}}<br>
+        </div>
+        <div class="wanted">
+            <h3 class="tit-1">Wanted Profile</h3> <br><br>
+            <h3>Physical Appearance</h3> <br><br>
+            Sexe : {{candi.sexe_1}}<br>
+            Eye Color : {{candi.eye_color_1}}<br>
+            Hair Color : {{candi.hair_color_1}}<br>
+            Body Size : {{candi.body_1}}<br><br>
+            <h3>Spiritual Level</h3><br><br>
+            Level of Religion : {{candi.religion_1}}<br>
+            Limud Torah : {{candi.torah_1}}<br>
+            Jewish Status : {{candi.jew_status_1}}<br><br>
+        </div>
+    </div><br>
+
+    <button class="btnn">Search</button>
+    <br><br>
+
+    <div class="results">
+        
+    </div>
+
+</div>
+
+
+{% endblock %}

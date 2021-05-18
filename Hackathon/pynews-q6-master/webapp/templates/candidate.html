@@ -1,0 +1,310 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    body{
+        color: white;
+        font-family: 'Kanit', sans-serif;
+
+    }
+    .block{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    form{
+        /* display: inline-block; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 10px;
+        background-color: #543855;
+        
+        /* height: 1100px; */
+        /* padding: 20px; */
+        text-align: center;
+        /* margin-right: 63%;
+        margin-left: 37%; */
+    }
+    form label{
+        text-align: center;
+    }
+    form input{
+        /* display: flex; */
+        /* padding-right: 30px; */
+        margin-left: 20px;
+        background-color: #514752;
+        color: white;
+        border-radius: 5px;
+        padding: 7px;
+        border: none;
+        text-align: center;
+    }
+    form input:focus{
+        outline-width: 0;
+    }
+    .tit1{
+        text-align: center;
+        justify-content: left;
+        
+    }
+    .title{
+        text-align: center;
+        font-weight: bold;
+    }
+    .firstb{
+        margin-top: 75px;
+        
+        height: 300px;
+        
+        /* flex-wrap: wrap; */
+        /* margin-top: 100px;
+        padding: 20px;
+        margin-left: auto; */
+    }
+    .firstb form input{
+        color: blueviolet;
+    }
+    input #firstname, #firstname, #lastname, #sexe, #mail, #age, #height, #location, #phone, #nationality,
+    #father_job, #origin, #mother_job, #father_origin, #mother_origin,
+    #school, #future_job, #eye_color, #hair_color, #body, #religion, #torah, #jew_status,
+    #sexe_1, #religion_1, #torah_1, #jew_status_1{
+        float: right;
+    }
+
+    .secondb{
+        margin-top: 30px;
+        height: 450px;
+        /* flex-wrap: wrap; */
+        /* margin-top: 50px;
+        padding: 20px; */
+    }
+    .thirdb{
+        margin-top: 70px;
+        
+        height: 300px;
+    
+    }
+    .firstb, .thirdb{
+        margin-top: 100px;
+    }
+
+    #submit{
+        /* position: relative; */
+        /* top: 0px;
+        bottom: 0px;
+        right: 130px; */
+        float: right;
+        margin-left: 45%;
+        margin-top: 20px;
+        height: 40px;
+        width: 100px;
+        background-color: var(--gren-color);
+        color: white;
+        animation: 1s;
+        transition: 1s;
+    }
+    #submit:hover{
+        transition: 1s;
+        animation: 1s;
+
+        transform: scale(1.1);
+    }
+    
+    
+    .firstb1, .secondb1, .lastb{
+        width: 350px;
+        margin-top: 20px;
+        /* padding-top: 150px; */
+        
+    }
+    .firstb2{
+        width: 540px;
+    }
+    .secondb2{
+        width: 540px;
+    }
+    .firstb2 label{
+        float: left;
+        /* position: relative; */
+        /* top: 110px;
+        left: 230px; */
+    }
+    #w{
+        float: right;
+    }
+    #p{
+        float: left;
+    }
+
+
+
+</style>
+
+<div class="block">
+<h2 class="title">
+        Complete the profile below ↓<br><br> Don't forget any forms !
+</h2><br>
+<form action="" method="POST">
+    {{ form.hidden_tag() }}
+    
+<div class="firstb">
+    
+    <p>
+        {{ form.sexe.label }}
+        {{ form.sexe(placeholder="Male or Female") }}
+    </p>
+    <p>
+        {{ form.firstname.label }}
+        {{ form.firstname() }}
+    </p>
+    <p>
+        {{ form.lastname.label }}
+        {{ form.lastname() }}
+    </p> 
+    <p>
+        {{ form.mail.label }}
+        {{ form.mail(placeholder="Type a valid Email address") }}
+    </p>
+    <p>
+        {{ form.csrf_token }}
+        {{ form.image(placeholder="PIC") }}
+    </p>
+</div>
+<div class="secondb">
+    <h3 class="tit1">General Infos</h3><br>
+    <p>
+        {{ form.age.label }}
+        {{ form.age() }}
+    </p>
+    <p>
+        {{ form.height.label }}
+        {{ form.height(placeholder="Ex: 180 for 180cm") }}
+    </p>
+    <p>
+        {{ form.location.label }}
+        {{ form.location() }}
+    </p>
+    <p>
+        {{ form.phone.label }}
+        {{ form.phone(placeholder="Must be a valid number") }}
+    </p>
+    <p>
+        {{ form.nationality.label }}
+        {{ form.nationality() }}
+    </p><br><br><br><br>
+<h3 id="look">Look & Spirituality</h3><br>
+</div>
+<div class="thirdb">
+    <p>
+        {{ form.origin.label }}
+        {{ form.origin(placeholder="Country of Origin") }}
+    </p>
+    <p>
+        {{ form.father_job.label }}
+        {{ form.father_job(placeholder="If not working, type 'Other'") }}
+    </p>
+    <p>
+        {{ form.mother_job.label }}
+        {{ form.mother_job(placeholder="If not working, type 'Other'") }}
+    </p>
+    <p>
+        {{ form.father_origin.label }}
+        {{ form.father_origin() }}
+    </p>
+    <p>
+        {{ form.mother_origin.label }}
+        {{ form.mother_origin() }}
+    </p>
+</div>
+<div class="lastb">
+    <p>
+        {{ form.school.label }}
+        {{ form.school() }}
+    </p>
+    <p>
+        {{ form.future_job.label }}
+        {{ form.future_job(placeholder="Avreh / Active Work / Both") }}
+    </p>
+    <p>
+        {{ form.sexe_1.label }}
+        {{ form.sexe_1() }}
+    </p>
+
+</div><br><br>
+
+<!-- <h4 id="desc">Describe it</h4> -->
+
+<br><div class="firstb1">
+    
+        <p>
+            {{ form.eye_color.label }}
+            {{ form.eye_color(placeholder="Brown / Blue / Green / Black") }}
+        </p>
+        <p>
+            {{ form.hair_color.label }}
+            {{ form.hair_color(placeholder="Brown / Blond / Red") }}
+        </p> 
+        <p>
+            {{ form.body.label }}
+            {{ form.body(placeholder="Fit / Middle / Fat") }}
+        </p>
+    </div>
+<!-- <h3 class="tit3">Wanted Profile</h3><br><br> -->
+<div class="secondb1">
+        <p>
+            {{ form.religion.label }}
+            {{ form.religion(placeholder="Low / Medium / High") }}
+        </p>
+        <p>
+            {{ form.torah.label }}
+            {{ form.torah(placeholder="Occasionaly / Daily / None for Girl") }}
+        </p>
+        <p>
+            {{ form.jew_status.label }}
+            {{ form.jew_status(placeholder="Borned Jewish / Converted") }}
+        </p><br><br>
+        
+
+</div>
+
+<div class="firstb2"><h3 id="w">Wanted</h3><br><br><br>
+    <p>
+        {{ form.eye_color_1.label }}
+        {{ form.eye_color_1(placeholder="Brown / Blue / Green / Black") }}
+    </p>
+    <p>
+        {{ form.hair_color_1.label }}
+        {{ form.hair_color_1(placeholder="Brown / Blond / Red") }}
+    </p> 
+    <p>
+        {{ form.body_1.label }}
+        {{ form.body_1(placeholder="Fit / Middle / Fat") }}
+    </p>
+</div>
+
+<div class="secondb2"><h3 id="p">Profile</h3><br><br><br>
+    <p>
+        {{ form.religion_1.label }}
+        {{ form.religion_1(placeholder="Low / Medium / High") }}
+    </p>
+    <p>
+        {{ form.torah_1.label }}
+        {{ form.torah_1(placeholder="Occasionaly / Daily / None for Girl") }}
+    </p>
+    <p>
+        {{ form.jew_status_1.label }}
+        {{ form.jew_status_1(placeholder="Borned Jewish / Converted") }}
+    </p>
+    
+
+</div>
+{{ form.submit() }}<br><br>
+</form><br>
+</div>
+<br><br>
+
+{% endblock %}

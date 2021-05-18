@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    body{
+        color: white;
+        font-family: 'Kanit', sans-serif;
+    }
+    li{
+        background: #543855;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    li a{
+        color: white;
+    }
+</style>
+<ol>
+    {% for candi in candis %}
+    <li>
+        <a href="{{ url_for('candi_page', candi_id=candi.id) }}">{{candi.sexe}}⎼⎼⎼⎼{{ candi.firstname }} {{candi.lastname}} ⎼⎼⎼{{candi.age}} years old<a/><br>
+    </li><br>
+    {% endfor %}
+</ol>
+
+
+{% endblock %}

@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+    
+{% block content %}
+
+<style>
+    body{
+        color: rgb(255, 255, 255);
+        font-family: 'Kanit', sans-serif;
+        
+    }
+    .container-1{
+        background-color: #543855;
+        border: solid 1px white;
+        height: 250px;
+        width: 1100px;
+        font-family: 'Kanit', sans-serif;
+        border-radius: 10px;
+        padding-left: 20px;
+
+    }
+    .container-1 h1, h3, p{
+        margin-left: 600px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .container-1 p{
+        font-size: 15px;
+        text-align: center;
+    }
+    .pp{
+        border-radius: 50%;
+        background-color: gray;
+        width: 150px;
+        height: 150px;
+        border: solid 2px gray;
+        float: left;
+        margin-right: 65px;
+    }
+    .container-2{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-direction: row;
+        width: 1100px;
+        height: 430px;
+        border-radius: 10px;
+        border: solid 1px white;
+        padding: 20px;
+        background-color: #543855;
+
+    }
+    .container-11{
+        /* border: 1px solid rgb(255, 255, 255); */
+        border-radius: 10px;
+        background-color: #543855 ;
+        padding: 15px;
+        width: 300px;
+        height: 390px;
+    }
+    .task a{
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        border-radius: 10px;
+        padding: 7px;
+        background: #543855;
+        margin-top: 50px;
+        box-shadow: 0 0 16px #543855 ;
+    }
+    
+    #red{
+        background: rgb(211, 82, 82);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .task{
+        /* border: 1px solid rgb(255, 255, 255); */
+        border-radius: 10px;
+        font-family: 'Montserrat';
+        font-size: 11px;
+        background-color: #543855 ;
+        padding: 15px;
+        text-align: center;
+        width: 300px;
+        height: 390px;
+    }
+    .task-2{
+        /* border: 1px solid rgb(255, 255, 255); */
+        border-radius: 10px;
+        font-family: 'Montserrat';
+        font-size: 11px;
+        background-color: #543855 ;
+        padding: 15px;
+        text-align: center;
+        width: 300px;
+        height: 390px;
+    }
+    .task-2 a{
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        border-radius: 10px;
+        padding: 7px;
+        background: #543855;
+        margin-top: 50px;
+        box-shadow: 0 0 16px #543855 ;
+    }
+    h4{
+        font-size: 18px;
+    }
+    #ver{
+        color: gold;
+    }
+    span{
+        color: white;
+        font-weight: bold;
+    }
+</style>
+<div class="container-1">
+<br><div class="pp"><img src="/static/ppempty.png" height="150px" width="150px"></div>    
+<h1>Welcome {{user.name}} </h1><br>
+<h3>You're using the ID N°{{user.id}}</h3><br>
+<p>Your password is {{user.password | encrypt }}</p>
+</div><br>
+
+<div class="container-2">
+    <div class="container-11">
+        <h4><span>Name</span> : {{user.name}}</h4><br>
+        <h4><span>Username </span>: {{user.name}}76{{user.id}} <span id="ver">✓</span></h4><br>
+        <h4><span>Account</span> : Premium Access Plus <span id="ver">✓</span></h4><br>
+        <h4><span>Mail</span> : {{user.mail}}</h4><br>
+        <h4><span>User ID</span> : {{user.id}}</h4><br>
+        <h4><span>Rank</span> :  {{user.id - 1}} ↑ </h4>
+    </div>
+    <div class="task"><br>
+        <a href="{{ url_for('addnew') }}"> Add ✚ </a><br><br><br><br><br>
+        <a href="{{ url_for('candi_list') }}">  My Candidates</a><br><br><br>
+        <a href="{{ url_for('messages') }}"> My Messages </a><br><br><br><br><br><br><br><br>
+        <a id="red"href="{{ url_for('signout') }}">Sign Out </a>
+    </div>
+    <div class="task-2"><br><br><br><br><br>
+        <a href="#"> ⚲ Account </a><br><br><br>
+        <a href="#">  🔐 Security </a><br><br><br>
+        <a href="#"> ⏣ Settings </a><br><br><br><br><br><br>
+        
+    </div>
+</div>
+
+{%endblock%} 

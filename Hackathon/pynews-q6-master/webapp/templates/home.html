@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        color: white;
+        font-family: 'Kanit', sans-serif;
+
+    }
+    h1{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-weight: bold;
+        font-size: 80px;
+    }
+    .main h1, h2, h3{
+        text-align: center;
+        justify-content: center;
+        padding: 10px;
+    }
+    #r{
+        font-size: 25px;
+        /* position: relative;
+        bottom: 45px; */
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+    }
+    
+    #btnsu{
+        
+        position: relative;
+        bottom: 130px;
+        left: 36%;
+        right: 37%;
+        font-size: 30px;
+        font-weight: bold;
+        border-radius: 35px;
+        border: 2px solid #543855 ;
+        padding: 12px;
+        border: none;
+        background: linear-gradient(to right, #ff3370, gold  );
+        color: white;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+        box-shadow: 0 0 16px #543855 ;
+        
+    }
+    
+    .butun a{
+        text-decoration: none;
+    }
+    .butun a:hover{
+        transform: scale(1.4);
+        color: #20bf6b;
+        background-color: white;
+    }
+    #title{
+        /* color: #20bf6b; */
+        color: gold;
+        padding-left: 3px;
+    }
+    img{
+    
+    }
+    #fa{
+        font-size: 10px;
+    }
+    #m{
+        font-size: 90px;
+        
+    }
+    .foot{
+        display: flex;
+        justify-content: space-around;
+    }
+    footer{
+        /* display: flex;
+        justify-content: space-around;
+        flex-direction: row; */
+        height: 250px;
+        width: 1110px;
+        border: 1px solid white;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0 0 16px #543855 ;
+    }
+    footer p{
+        text-align: center;
+        font-size: 20px;
+        /* margin-top: 150px; */
+        color: rgb(61, 61, 61);
+    }
+    #legal{
+        text-align: center;
+        font-size: 18px;
+        color: rgb(65, 65, 65);
+    }
+    .title1{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: space-around;
+        color: black;
+    }
+    .firstp{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .secondp{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .thirdp{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .thirdp img{
+        padding: 1px;
+    }
+    .firstp a, .secondp a, .thirdp a{
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+    #gold{
+        color: gold;
+    }
+
+</style>
+
+<br><br><h1><span id="m">M</span>atch <span id="title"><span id="gold">⚭</span>Up</span><span id="r">®</span></h1><br><br>
+<div class="main">
+    <h2> <span id="title">⚭</span> One tool to match them ALL<span id="title">⚭</span></h2><br><br><br>
+    <!-- <img src="/static/heart3.png" height="60px" width="70px"> -->
+    <!-- <img src="/static/buble.png" height="200px" width="260px"> -->
+</div>
+<!-- <div class="buttons"> -->
+        <!-- <a href="{{ url_for('signin') }}" class="btns" id="btnsi">Sign In</a> -->
+        <a href="{{ url_for('signup') }}" class="butun" id="btnsu">Create a new Account</a>
+<!-- </div>     -->
+    
+
+<br><br><br>
+<footer><br>
+<div class="foot">
+    <div class="title1">
+        <h3><span id="m">M</span>atch <span id="title">⚭</span>Up<span id="r">®</span></h3>
+    </div>
+    <div class="firstp">
+        <p>GENERAL</p>
+        <a href="#">Infos</a>
+        <a href="#">Contact</a>
+        <a href="#">Help</a>
+    </div>
+    <div class="secondp">
+        <p>LEGAL</p>
+        <a href="#">FAQ</a>
+        <a href="#">Security</a>
+        <a href="#">Terms</a>
+    </div>
+    <div class="thirdp">
+        <p>SOCIAL</p>
+        <!-- <a href="#">Facebook</a> -->
+        <a href="#"><img src="/static/face.png" height="30px" width="30px"></a>
+        <a href="#"><img src="/static/twi.png" height="30px" width="30px"></a>
+        <a href="#"><img src="/static/insta.png" height="30px" width="30px"></a>
+    </div>
+</div><br><br>
+<p id="legal"> Copyright © 2021 by Match Up® Inc. All Rights Reserved. </p><br>
+</footer>
+
+
+{% endblock %}
+

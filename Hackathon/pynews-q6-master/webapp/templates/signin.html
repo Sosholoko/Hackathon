@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    form{
+        border: var(--border-color) 2px solid;
+        font-family: 'Kanit', sans-serif;
+        width: 250px;
+        height: 270px;
+        background-color: var(--form-color);
+        color: white;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        border-radius: 10px;
+        padding: 15px;
+    }
+    footer{
+        font-family: 'Montserrat';
+    }
+    form a{
+        font-size: 11px;
+    }
+    input{
+        border-radius: 8px;
+        border: none;
+    }
+    #submit{
+        background-color: var(--gren-color);
+        border-radius: 5px;
+        border: none;
+        color: white;
+        padding: 3px 5px;
+        margin-top: 0px;
+    }
+    .square{
+        position: static;
+        margin-top: 80px;
+        background-color: var(--signin-color);
+        height: 550px;
+        border: 1px solid white;
+        border-radius: 10px;
+    }
+
+    #accr{
+        color: white;
+        font-family: 'Kanit', sans-serif;
+        text-align: center;
+        padding-top: 10px;
+    }
+    #accr2{
+        color: white;
+        font-family: 'Kanit', sans-serif;
+        text-align: center;
+    }
+    #sg{
+        color: white;
+        font-family: 'Kanit', sans-serif;
+        text-align: center;
+    }
+    span{
+        color: gold;
+    }
+    #fpwd{
+        position: relative;
+        bottom: 10px;
+        font-size: 10px;
+        margin-bottom: 0px;
+    }
+    #fpwd a{
+        text-decoration: none;
+        color: white;
+    }
+    .regi{
+        color: white;
+        
+    }
+    .regi a{
+        text-decoration: none;
+    }
+</style>
+
+<div class="square">
+    <h1 id="accr">Welcome Back to <span>Match⚭Up®</span></h1><br><h2 id="accr2">Matching the right person never have been this easy ! Right ?</h2> 
+    <h1 id="sg">Sign <span>in</span> → </h1>
+    <form action="" method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}
+            {{ form.username() }}
+        </p>
+        <p>
+            {{ form.password.label }}
+            {{ form.password() }}
+            <p id="fpwd" >I forgot my password <a href="">click HERE</a></p>
+        </p>
+        
+        {{ form.submit() }}<br>
+        <a class="regi" href="{{url_for('signup')}}">Register Now</a>
+    </form>
+</div>
+    
+
+{% endblock %}
