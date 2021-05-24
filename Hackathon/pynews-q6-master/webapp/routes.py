@@ -4,6 +4,7 @@ from flask_socketio import SocketIO, emit, send
 from . import app       # . is webapp/
 from . import forms, models, db, mail_functions
 import flask_login
+from flask_login import login_user, current_user, logout_user, login_required, login_manager
 import pusher
 import json
 from time import localtime, strftime
@@ -80,9 +81,11 @@ def addnew():
                                     school=school,mail=mail, future_job=future_job, eye_color=eye_color,hair_color=hair_color,
                                     body=body, religion=religion, torah=torah, jew_status=jew_status, eye_color_1=eye_color_1,hair_color_1=hair_color_1,
                                     body_1=body_1, religion_1=religion_1, torah_1=torah_1, jew_status_1=jew_status_1, sexe=sexe, sexe_1=sexe_1 )
+            
+            flask_login.current_user.new_candidate.append(newCandidate)
             db.session.add(newCandidate)
             db.session.commit()
-            flask.flash("You added a new candidate successfully", "success")
+            flask.flash("You added a new candidate to your list", "success")
         else:
             flask.flash("You haven't fill the entire form correctly, try again !", "danger")
     
@@ -95,9 +98,28 @@ def addnew():
 
 
 
+
+@app.route("/candi/<int:candi_id>/request")
+def comparing(candi_id):
+    mycandis = models.Candidate.query.get(candi_id)
+    requestcandi1 = models.Candidate.query.filter_by(eye_color = mycandis.eye_color_1, hair_color = mycandis.hair_color_1, 
+                                                    body = mycandis.body_1, religion = mycandis.religion_1, torah= mycandis.torah_1,
+                                                    jew_status= mycandis.jew_status_1, sexe = mycandis.sexe_1).all()
+    requestcandibase = models.Candidate.query.filter_by( sexe = mycandis.sexe_1).all()
+    requestcandiphybase = models.Candidate.query.filter_by( sexe = mycandis.sexe_1, body = mycandis.body_1, eye_color = mycandis.eye_color_1).all()
+    requestcandiphytot = models.Candidate.query.filter_by( sexe = mycandis.sexe_1, body = mycandis.body_1, eye_color = mycandis.eye_color_1, hair_color = mycandis.hair_color_1).all()
+    requestcandirel = models.Candidate.query.filter_by( sexe = mycandis.sexe_1, torah = mycandis.torah_1, religion = mycandis.religion_1, jew_status = mycandis.jew_status_1).all()
+    requestcandibaserel = models.Candidate.query.filter_by( sexe = mycandis.sexe_1, religion = mycandis.religion_1, jew_status = mycandis.jew_status_1).all()
+    return flask.render_template("result.html", requestcandi1 = requestcandi1, requestcandibase=requestcandibase, requestcandiphybase = requestcandiphybase, requestcandiphytot =requestcandiphytot, requestcandirel = requestcandirel,requestcandibaserel=requestcandibaserel, mycandis= mycandis )
+    
+
+
 @app.route("/candi")
 def candi_list():
-    candis = models.Candidate.query.all()
+    candiss = models.Candidate.query.all()
+    print(candiss)
+    candis = flask_login.current_user.new_candidate
+    print(candis)
     return flask.render_template("candi_list.html", candis=candis)
 
 @app.route("/candi/<int:candi_id>")

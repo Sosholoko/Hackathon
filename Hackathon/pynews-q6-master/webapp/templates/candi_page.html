@@ -58,10 +58,10 @@
         width: 300px;
         height: 650px;
     }
-    .btnn{
+    /* .btnn{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: center;
         margin-left: auto;
         margin-right: auto;
         border-radius: 10px;
@@ -70,10 +70,54 @@
         border:none;
         background: rgb(82, 214, 115);
         color: white;
+    }
+    .btnn a{
+        text-decoration: none;
+        color: white;
+    }
+    .btnn a:hover{
+        text-decoration: none;
+        color: white;
+        background-color: hotpink;
+    } */
 
+    .btnn{
+        position: relative;
+        border-radius: 10px;
+        background-color: rgb(25, 204, 109);
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        margin-left: 45%;
+    }
+
+    #back{
+        position: relative;
+        bottom: 30px;
+        border-radius: 10px;
+        background-color: salmon;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        box-shadow: 0 0 36px rgb(255, 81, 62) ;
+    }
+    #back a{
+        text-decoration: none;
+    }
+    #name{
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        left: 38%;
+        bottom: 50px;
     }
     
+    
 </style>
+
+<a id="back" href="{{ url_for('candi_list')}}">⌫Back</a>
+
+<h1 id="name">{{candi.firstname}} {{candi.lastname}}</h1>
 
 <div class="block">
     <div class="candidate_space">
@@ -92,8 +136,8 @@
             Origin : {{candi.origin}}<br><br>
             Frequented School : {{candi.school}}<br>
             Desired Situation : {{candi.future_job}}<br>
-            Eye color : {{candi.eye_color}}<br>
-            Wanted Eye color : {{candi.eye_color_1}}<br>
+            
+            
 
 
         </div>
@@ -115,23 +159,19 @@
         <div class="wanted">
             <h3 class="tit-1">Wanted Profile</h3> <br><br>
             <h3>Physical Appearance</h3> <br><br>
-            Sexe : {{candi.sexe_1}}<br>
-            Eye Color : {{candi.eye_color_1}}<br>
-            Hair Color : {{candi.hair_color_1}}<br>
-            Body Size : {{candi.body_1}}<br><br>
+            Wanted Sexe : {{candi.sexe_1}}<br>
+            Wanted Eye Color : {{candi.eye_color_1}}<br>
+            Wanted Hair Color : {{candi.hair_color_1}}<br>
+            Wanted Body Size : {{candi.body_1}}<br><br>
             <h3>Spiritual Level</h3><br><br>
-            Level of Religion : {{candi.religion_1}}<br>
-            Limud Torah : {{candi.torah_1}}<br>
-            Jewish Status : {{candi.jew_status_1}}<br><br>
+            Wanted Level of Religion : {{candi.religion_1}}<br>
+            Wanted Limud Torah : {{candi.torah_1}}<br>
+            Wanted Jewish Status : {{candi.jew_status_1}}<br><br>
         </div>
     </div><br>
 
-    <button class="btnn">Search</button>
+    <a class="btnn" href="{{ url_for('comparing', candi_id = candi.id) }}">Search Matches</a> 
     <br><br>
-
-    <div class="results">
-        
-    </div>
 
 </div>
 

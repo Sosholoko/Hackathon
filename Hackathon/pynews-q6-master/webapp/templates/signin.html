@@ -6,17 +6,23 @@
     form{
         border: var(--border-color) 2px solid;
         font-family: 'Kanit', sans-serif;
-        width: 250px;
-        height: 270px;
+        width: 290px;
+        height: 300px;
         background-color: var(--form-color);
         color: white;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 50px;
-        border-radius: 10px;
+        margin-top: 40px;
+        border-radius: 40px;
         padding: 15px;
     }
+
+    #username, #password{
+        padding: 8px;
+        border-radius: 30px;
+    }
+    
     footer{
         font-family: 'Montserrat';
     }
@@ -29,10 +35,10 @@
     }
     #submit{
         background-color: var(--gren-color);
-        border-radius: 5px;
+        border-radius: 20px;
         border: none;
         color: white;
-        padding: 3px 5px;
+        padding: 6px;
         margin-top: 0px;
     }
     .square{
@@ -41,7 +47,7 @@
         background-color: var(--signin-color);
         height: 550px;
         border: 1px solid white;
-        border-radius: 10px;
+        border-radius: 50px;
     }
 
     #accr{
@@ -76,14 +82,20 @@
     .regi{
         color: white;
         
+        
     }
     .regi a{
         text-decoration: none;
+        margin-bottom: 15px;
+    }
+    #r{
+        font-size: 20px;
+        color: white;
     }
 </style>
 
 <div class="square">
-    <h1 id="accr">Welcome Back to <span>Match⚭Up®</span></h1><br><h2 id="accr2">Matching the right person never have been this easy ! Right ?</h2> 
+    <h1 id="accr">Welcome Back to <span>Match⚭Up<span id="r">®</span></span></h1><br><h2 id="accr2">Matching the right person never have been this easy ! Right ?</h2> 
     <h1 id="sg">Sign <span>in</span> → </h1>
     <form action="" method="POST">
         {{ form.hidden_tag() }}

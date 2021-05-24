@@ -7,23 +7,32 @@ def user_loader(user_id):
     return User.query.get(user_id)
 
 
+# user2candidate = db.Table(
+#     "user2candidate", # name of the table
+#     db.Column("user_id", db.Integer(), db.ForeignKey("user.id"), primary_key=True),
+#     db.Column("candidate_id", db.Integer(), db.ForeignKey("candi.id"), primary_key=True),
+# ) # PK will be a combination of the two (1-2)
 
 
 
+class User(db.Model, flask_login.UserMixin): 
 
-class User(db.Model, flask_login.UserMixin): # db.Model is required if you want to create an SQL model
-
-    # Every attribute is a class variable
-
+    __tablename__ = 'user'
     id = db.Column(db.Integer(), primary_key=True)
 
     mail = db.Column(db.String(64), nullable=True)
     name = db.Column(db.String(64))
     password = db.Column(db.String(64))
     boolean = db.Column(db.Boolean, default=False)
+    new_candidate = db.relationship("Candidate")
+
+    # new_candidate = db.relationship("Candidate", backref="user", secondary=user2candidate)
 
 class Candidate(db.Model):
+    __tablename__ = 'candi'
     id = db.Column(db.Integer(), primary_key = True)
+    user_id = db.Column(db.Integer(), db.ForeignKey('user.id')) 
+
     sexe = db.Column(db.String(15))
     firstname = db.Column(db.String(64))
     lastname = db.Column(db.String(64))
@@ -53,6 +62,10 @@ class Candidate(db.Model):
     religion_1 = db.Column(db.String(64))
     torah_1 = db.Column(db.String(64))
     jew_status_1 = db.Column(db.String(64))
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
 
 
 

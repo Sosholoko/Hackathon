@@ -15,13 +15,19 @@
     li a{
         color: white;
     }
+    h1{
+        text-align: center;
+    }
 </style>
+
+<h1>My Candidates</h1><br><br>
 <ol>
-    {% for candi in candis %}
+        {% for candi in candis %}
     <li>
-        <a href="{{ url_for('candi_page', candi_id=candi.id) }}">{{candi.sexe}}⎼⎼⎼⎼{{ candi.firstname }} {{candi.lastname}} ⎼⎼⎼{{candi.age}} years old<a/><br>
+        <a href="{{ url_for('candi_page', candi_id=candi.id) }}">{{candi.sexe}} ⎼⎼⎼⎼ {{ candi.firstname }} {{candi.lastname}} ⎼⎼⎼ {{candi.age}} years old<a/><br>
     </li><br>
-    {% endfor %}
+        {% endfor %}
+    
 </ol>
 
 

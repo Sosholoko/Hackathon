@@ -5,10 +5,10 @@
 <style>
     form{
         position: relative;
-        bottom: 650px;
+        bottom: 675px;
         border: var(--border-color) 2px solid;
         width: 265px;
-        height: 500px;
+        height: 550px;
         font-family: 'Kanit', sans-serif;
         background-color: var(--form-color);
         color: white;
@@ -17,9 +17,14 @@
         margin-left: auto;
         margin-right: 80px;
         margin-bottom: 250px;
-        border-radius: 10px;
+        border-radius: 30px;
         padding: 10px;
         box-shadow: 0 0 8px #d1c8c8 ;
+    }
+
+    #username, #password, #mail, #confirm{
+        padding: 8px;
+        border-radius: 30px;
     }
     footer{
         font-family: 'Montserrat';
@@ -34,10 +39,10 @@
     }
     #submit{
         background-color: var(--gren-color);
-        border-radius: 10px;
+        border-radius: 20px;
         border: none;
         color: white;
-        padding: 5px;
+        padding: 10px;
         margin-top: 15px;
     }
     span{
@@ -45,10 +50,10 @@
     }
     .square2{
         position: static;
-        margin-top: 80px;
+        margin-top: 70px;
         margin-bottom: auto;
         border: 2px solid var(--border-color);
-        border-radius: 10px;
+        border-radius: 50px;
         background-color: var(--signin-color);
         height: 600px;
         box-shadow: 0 0 8px #d1c8c8 ;
@@ -93,11 +98,15 @@
         margin-top: 100px;
         padding-left: 25px;
     }
+    #r{
+        font-size: 20px;
+        color: white;
+    }
     
 </style>
 <div class="square2">
     <div class="titleblock">
-        <h1 id="accr2">Welcome to <span>Match⚭Up®</span></h1><br><h2 id="accr3">Matching people never have been this easy !</h2> 
+        <h1 id="accr2">Welcome to <span>Match⚭Up<span id="r">®</span></span></h1><br><h2 id="accr3">Matching people never have been this easy !</h2> 
         <h1 id="sg2">Sign <span>UP</span> → </h1>
         <h4 id="link" >Already have an account ? <a href="{{url_for('signin')}}">Sign in here →</a></h3>
     </div>

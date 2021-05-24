@@ -14,7 +14,7 @@
         height: 250px;
         width: 1100px;
         font-family: 'Kanit', sans-serif;
-        border-radius: 10px;
+        border-radius: 30px;
         padding-left: 20px;
 
     }
@@ -43,7 +43,7 @@
         flex-direction: row;
         width: 1100px;
         height: 430px;
-        border-radius: 10px;
+        border-radius: 30px;
         border: solid 1px white;
         padding: 20px;
         background-color: #543855;
@@ -126,7 +126,7 @@
 <div class="container-2">
     <div class="container-11">
         <h4><span>Name</span> : {{user.name}}</h4><br>
-        <h4><span>Username </span>: {{user.name}}76{{user.id}} <span id="ver">✓</span></h4><br>
+        <h4><span>Username </span>: {{user.name}}7{{user.id + 13}}{{user.id + 5}} <span id="ver">✓</span></h4><br>
         <h4><span>Account</span> : Premium Access Plus <span id="ver">✓</span></h4><br>
         <h4><span>Mail</span> : {{user.mail}}</h4><br>
         <h4><span>User ID</span> : {{user.id}}</h4><br>
@@ -134,14 +134,14 @@
     </div>
     <div class="task"><br>
         <a href="{{ url_for('addnew') }}"> Add ✚ </a><br><br><br><br><br>
-        <a href="{{ url_for('candi_list') }}">  My Candidates</a><br><br><br>
-        <a href="{{ url_for('messages') }}"> My Messages </a><br><br><br><br><br><br><br><br>
+        <a href="{{ url_for('candi_list') }}">  ⚤ My Candidates</a><br><br><br>
+        <a href="{{ url_for('messages') }}"> ✉︎ My Messages </a><br><br><br><br><br><br><br><br>
         <a id="red"href="{{ url_for('signout') }}">Sign Out </a>
     </div>
     <div class="task-2"><br><br><br><br><br>
-        <a href="#"> ⚲ Account </a><br><br><br>
-        <a href="#">  🔐 Security </a><br><br><br>
-        <a href="#"> ⏣ Settings </a><br><br><br><br><br><br>
+        <a href="#"> ♀︎  Account </a><br><br><br>
+        <a href="#">  ⚠︎  Security </a><br><br><br>
+        <a href="#"> ⚙︎  Settings </a><br><br><br><br><br><br>
         
     </div>
 </div>

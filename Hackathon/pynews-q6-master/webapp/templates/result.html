@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    body{
+        color: white;
+        font-family:  'Kanit', sans-serif;
+    }
+    h1{
+        text-align: center;
+        font-weight: bold;
+    }
+    h2{
+        font-weight: 500;
+        color: #f5edf5c2;
+    }
+    #bm{
+        color: gold;
+    }
+    .results{
+        background-color: #543855c2;
+        padding: 30px;
+        border-radius: 20px;
+        border: solid 1px white;
+    }
+    span{
+        font-size: 15px;
+        color: grey;
+    }
+    #back{
+        border-radius: 10px;
+        background-color: salmon;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        box-shadow: 0 0 36px rgb(255, 81, 62) ;
+    }
+    #back a{
+        text-decoration: none;
+    }
+</style>
+
+<a id="back" href="{{ url_for('candi_page', candi_id = mycandis.id) }}"> ⌫Back</a>
+
+<h1>Matching Results for <br>{{mycandis.firstname}} {{mycandis.lastname}}</h1><br><br>
+
+<div class="results">
+
+<h2 id="bm"> > Best Match  <span>Physical Best | Religious Best </span></h2>
+
+{% for candidate in requestcandi1 %}
+
+Candidate ID N°{{candidate.id}}
+
+{{candidate.firstname }} {{ candidate.lastname}}<br>
+
+
+{% endfor %}<br><br><br>
+
+
+
+
+<h2> > Sexe Orientation Match</h2>
+{% for candidate2 in requestcandibase %}
+
+Candidate ID N°{{candidate2.id}}
+{{candidate2.firstname}} {{candidate2.lastname}}<br>
+
+{% endfor %}<br><br>
+<h2> > Physical Base Match <span>Body | Eye Color </span></h2>
+{% for candidate3 in requestcandiphybase %}
+
+Candidate ID N°{{candidate3.id}}
+{{candidate3.firstname}} {{candidate3.lastname}}<br>
+
+{% endfor %}<br><br>
+<h2> > Best Physical Match <span> Body | Eye Color | Hair Color </span></h2>
+{% for candidate4 in requestphytot %}
+
+Candidate ID N° {{candidate4.id}}
+{{candidate4.firstname}} {{candidate4.lastname}}<br>
+
+{% endfor %}<br><br>
+<h2> > Base Religious Match <span> Religion Level | Jewish Status </span></h2>
+{% for candidate6 in requestcandibaserel %}
+
+Candidate ID N° {{candidate6.id}}
+{{candidate6.firstname}} {{candidate6.lastname}}<br>
+
+{% endfor %}<br><br>
+<h2> > Best Religious Match <span> Religion Level | Jewish Status | Torah Studying</span></h2>
+{% for candidate5 in requestcandirel %}
+
+Candidate ID N° {{candidate5.id}}
+{{candidate5.firstname}} {{candidate5.lastname}}<br>
+
+{% endfor %}
+</div>
+
+<br><br><br><br>
+
+
+
+
+{%endblock%}
