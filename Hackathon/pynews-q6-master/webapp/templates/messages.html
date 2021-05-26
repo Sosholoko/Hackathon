@@ -90,7 +90,7 @@
         left: 140.5px;
         bottom: 588.5px;
         border-radius: 30px !important;
-        height: 34px !important;
+        height: 35px !important;
         font-size: 15px !important;
         background-color: rgb(49, 164, 101) !important;
         color: white !important;
@@ -151,10 +151,14 @@
     #msg span #date-time{
         color: black;
     }
+    #my{
+        color: gold;
+
+    }
     
 </style>
 
-<h1> Messages </h1><br>
+<h1>My <span id="my">Messages</span></h1><br>
 <div class="main">
     
     <div class="not-area">
@@ -172,7 +176,7 @@
     </div>
     <div class="msg-area" id="msgarea">
         <p id="msg">
-            <strong><span id="str">You started a new chat ! Your messages will appears right below ↓</span></strong>
+            <strong><span id="str">Discuss with other MatchMakers connected ! Your messages will appears right below ↓</span></strong>
             <br><br><span id="v"></span><span id='date-time'></span>
         </p>
     </div>    

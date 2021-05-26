@@ -23,7 +23,7 @@
     .credentials{
         
         padding: 20px;
-        border-radius: 10px;
+        border-radius: 30px;
         background-color: #543855;
         border: 1px solid white;
         width: 300px;
@@ -42,7 +42,7 @@
         bottom: 510px;
         left: 400px; */
         padding: 20px;
-        border-radius: 10px;
+        border-radius: 30px;
         background-color: #543855;
         border: 1px solid white;
         width: 300px;
@@ -52,7 +52,7 @@
         bottom: 1135px;
         left: 800px; */
         padding: 20px;
-        border-radius: 10px;
+        border-radius: 30px;
         background-color: #543855;
         border: 1px solid white;
         width: 300px;
@@ -89,6 +89,16 @@
         color: white;
         text-decoration: none;
         margin-left: 45%;
+        animation: 1s ease;
+        transition: 1s;
+    }
+    .btnn:hover{
+        transition: 1s;
+        animation: 1s;
+        transform: scale(1.1);
+        background-color: gold;
+        color: white;
+        text-decoration: none;
     }
 
     #back{
@@ -99,10 +109,16 @@
         color: white;
         padding: 10px;
         text-decoration: none;
+        animation: 1s ease;
         box-shadow: 0 0 36px rgb(255, 81, 62) ;
     }
     #back a{
         text-decoration: none;
+    }
+    #back:hover{
+        animation: 1s;
+        background-color: white;
+        color: rgb(185, 63, 63);
     }
     #name{
         display: flex;
@@ -111,13 +127,17 @@
         left: 38%;
         bottom: 50px;
     }
-    
+    #gold{
+        color: gold;
+        padding-left: 10px;
+        font-weight: bold;
+    }
     
 </style>
 
 <a id="back" href="{{ url_for('candi_list')}}">⌫Back</a>
 
-<h1 id="name">{{candi.firstname}} {{candi.lastname}}</h1>
+<h1 id="name"> {{candi.firstname}}  <span id="gold"> {{candi.lastname}} </span></h1>
 
 <div class="block">
     <div class="candidate_space">

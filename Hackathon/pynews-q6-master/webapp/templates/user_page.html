@@ -18,9 +18,10 @@
         padding-left: 20px;
 
     }
-    .container-1 h1, h3, p{
+    .container-1 #tit, h3, p{
+        margin-top: 20px;
         margin-left: 600px;
-        font-weight: bold;
+        /* font-weight: bold; */
         text-align: center;
     }
     .container-1 p{
@@ -115,12 +116,21 @@
         color: white;
         font-weight: bold;
     }
+    #ds{
+        float: left;
+        font-weight: bold;
+        margin-top: 60px;
+    }
+    #name{
+        color: gold;
+    }
 </style>
 <div class="container-1">
-<br><div class="pp"><img src="/static/ppempty.png" height="150px" width="150px"></div>    
-<h1>Welcome {{user.name}} </h1><br>
+<br><div class="pp"><img src="/static/ppempty.png" height="150px" width="150px"></div>
+<h1 id="ds"><i class="far fa-address-card">&#8195</i> Dashboard</h1>    
+<h1 id="tit">Welcome <span id="name">{{user.name}} </span></h1><br>
 <h3>You're using the ID N°{{user.id}}</h3><br>
-<p>Your password is {{user.password | encrypt }}</p>
+<!-- <p>Your password is {{user.password | encrypt }}</p> -->
 </div><br>
 
 <div class="container-2">
@@ -133,15 +143,15 @@
         <h4><span>Rank</span> :  {{user.id - 1}} ↑ </h4>
     </div>
     <div class="task"><br>
-        <a href="{{ url_for('addnew') }}"> Add ✚ </a><br><br><br><br><br>
-        <a href="{{ url_for('candi_list') }}">  ⚤ My Candidates</a><br><br><br>
-        <a href="{{ url_for('messages') }}"> ✉︎ My Messages </a><br><br><br><br><br><br><br><br>
+        <a href="{{ url_for('addnew') }}"> <i class="fas fa-user-plus"></i>&#8195Add  </a><br><br><br><br><br>
+        <a href="{{ url_for('candi_list') }}"><i class="fas fa-users"></i> &#8195My Candidates</a><br><br><br>
+        <a href="{{ url_for('messages') }}"><i class="far fa-envelope"></i> &#8195My Messages </a><br><br><br><br><br><br><br><br>
         <a id="red"href="{{ url_for('signout') }}">Sign Out </a>
     </div>
     <div class="task-2"><br><br><br><br><br>
-        <a href="#"> ♀︎  Account </a><br><br><br>
-        <a href="#">  ⚠︎  Security </a><br><br><br>
-        <a href="#"> ⚙︎  Settings </a><br><br><br><br><br><br>
+        <a href="#"> <i class="far fa-user-circle"></i> &#8195 Account </a><br><br><br>
+        <a href="#"> <i class="fas fa-lock"></i> &#8195 Security </a><br><br><br>
+        <a href="#"><i class="fas fa-cog"></i> &#8195 Settings </a><br><br><br><br><br><br>
         
     </div>
 </div>

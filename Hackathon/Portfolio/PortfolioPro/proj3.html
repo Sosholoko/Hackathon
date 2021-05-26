@@ -17,6 +17,7 @@
         
         :root{
             --clr-accent : #ffffff;
+            --clr-brown : #553131;
         }
         
         body{
@@ -40,6 +41,12 @@
         }
         .my-projects{
             background-image: none;
+        }
+        .btnn{
+            text-align: center;
+        }
+        .btn{
+            color: black;
         }
     </style>
 </head>
@@ -75,15 +82,15 @@
         <div class="projects">
             <div class="project">
                 <h3>Add</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio harum architecto labore molestiae dicta voluptatum quos, porro eveniet totam obcaecati accusantium recusandae libero dolor officiis sunt soluta sed voluptates inventore.</p>
+                <p>Allow user to add new tasks that he planned to do ! The Plus Button will add the task to the ToDo list !</p>
             </div>
             <div class="project">
                 <h3>Reminds</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem porro at officiis magnam eligendi similique fuga, quia quasi reprehenderit accusamus deleniti. Odit quia iure eum reprehenderit ea consectetur modi nam!</p>
+                <p>The app has two separates lists, one if for the uncompleted items. It will help reminds the user to actually complete the task.</p>
             </div>
             <div class="project">
                 <h3>Complete</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum aut esse voluptates qui rem nesciunt nisi placeat harum! Mollitia nulla ducimus fugit perspiciatis possimus, debitis quasi voluptatibus quod ea corporis.</p>
+                <p>Once you finish complete the task, the "V" button will move the said task to the second list of completed items. Congratulation you did it !</p>
             </div>
         </div>
 
@@ -96,11 +103,13 @@
         <p class="section__subtitle section__subtitle--about">Add and Reminds what needs to do</p>
 
         <div class="about-me__body">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio ut quod facilis ipsa obcaecati culpa excepturi totam, ullam nulla reiciendis reprehenderit consectetur aspernatur neque sunt quis voluptatem ratione corrupti repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur illum enim totam libero assumenda dolore aliquam, in at doloribus est ab maiores corrupti odit? Deleniti ea architecto aut natus. Incidunt.</p>
+            <p>Basic and madatory project for anyone to be considered as a junior developer. The TodoList will help manages differents tasks of the user.</p>
+            <p>Using basic database comprehension to store all added tasks to the list. Same for deleting and moving items to differents places.</p>
+            <p>Techs Used : HTML / CSS / Python / Flask / SQLACHEMY / Sqlite3</p>
         </div>
 
-        <img src="../Projects/white.jpg" alt="Picture of me" height="380px" width="340px" class="about-me__img">
+        <img src="../logos/codeport3.png" alt="Picture of me" height="380px" width="340px" class="about-me__img">
+        <br><a id="btnn" class="btn" href="#"><i class="fab fa-github"></i> LOOK CODE</a>
     </section>
 
 
@@ -111,7 +120,7 @@
 
         <div class="portfolio">
             <a href="#" class="portfolio__item">
-                <img src="../logos/todologo.png" alt="Match⚭Up®" class="portfolio__img">
+                <!-- <img src="../logos/todologo.png" alt="Match⚭Up®" class="portfolio__img"> -->
                 <img src="../Projects/todo.png" alt="Hover®" class="portfolio__img">
             </a>
         </div>

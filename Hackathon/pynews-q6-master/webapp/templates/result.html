@@ -21,9 +21,10 @@
     .results{
         background-color: #543855c2;
         padding: 30px;
-        border-radius: 20px;
+        border-radius: 30px;
         border: solid 1px white;
     }
+
     span{
         font-size: 15px;
         color: grey;
@@ -39,21 +40,42 @@
     #back a{
         text-decoration: none;
     }
+    #back:hover{
+        background-color: white;
+        color: rgb(185, 63, 63);
+    }
+    #name{
+        color: gold;
+        font-size: 40px;
+    }
+    #winner{
+        color: gold;
+        font-weight: bold;
+        letter-spacing: 1px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border: 1px solid gold;
+        border-radius: 10px;
+    }
+    .und{
+        color: gold;
+        font-size: 30px;
+    }
 </style>
 
 <a id="back" href="{{ url_for('candi_page', candi_id = mycandis.id) }}"> ⌫Back</a>
 
-<h1>Matching Results for <br>{{mycandis.firstname}} {{mycandis.lastname}}</h1><br><br>
+<h1>Matching Results for <br><span id="name">{{mycandis.firstname}} {{mycandis.lastname}}</span></h1><br><br>
 
 <div class="results">
 
-<h2 id="bm"> > Best Match  <span>Physical Best | Religious Best </span></h2>
+<h2 id="bm"> > Best Match  <span>Physical Best | Religious Best </span></h2><br>
 
 {% for candidate in requestcandi1 %}
 
 Candidate ID N°{{candidate.id}}
 
-{{candidate.firstname }} {{ candidate.lastname}}<br>
+&#8195&#8195&#8195<span id="winner">{{candidate.firstname }} {{ candidate.lastname}}</span><br>
 
 
 {% endfor %}<br><br><br>
@@ -61,39 +83,39 @@ Candidate ID N°{{candidate.id}}
 
 
 
-<h2> > Sexe Orientation Match</h2>
+<h2> <span class="und">></span> Sexe Orientation Match</h2><br>
 {% for candidate2 in requestcandibase %}
 
 Candidate ID N°{{candidate2.id}}
-{{candidate2.firstname}} {{candidate2.lastname}}<br>
+&#8195&#8195{{candidate2.firstname}} {{candidate2.lastname}}<br><br>
 
 {% endfor %}<br><br>
-<h2> > Physical Base Match <span>Body | Eye Color </span></h2>
+<h2> <span class="und">></span> Physical Base Match <span>Body | Eye Color </span></h2><br>
 {% for candidate3 in requestcandiphybase %}
 
 Candidate ID N°{{candidate3.id}}
-{{candidate3.firstname}} {{candidate3.lastname}}<br>
+&#8195&#8195{{candidate3.firstname}} {{candidate3.lastname}}<br><br>
 
 {% endfor %}<br><br>
-<h2> > Best Physical Match <span> Body | Eye Color | Hair Color </span></h2>
+<h2> <span class="und">></span> Best Physical Match <span> Body | Eye Color | Hair Color </span></h2><br>
 {% for candidate4 in requestphytot %}
 
 Candidate ID N° {{candidate4.id}}
-{{candidate4.firstname}} {{candidate4.lastname}}<br>
+&#8195&#8195{{candidate4.firstname}} {{candidate4.lastname}}<br><br>
 
 {% endfor %}<br><br>
-<h2> > Base Religious Match <span> Religion Level | Jewish Status </span></h2>
+<h2> <span class="und">></span> Base Religious Match <span> Religion Level | Jewish Status </span></h2><br>
 {% for candidate6 in requestcandibaserel %}
 
 Candidate ID N° {{candidate6.id}}
-{{candidate6.firstname}} {{candidate6.lastname}}<br>
+&#8195&#8195{{candidate6.firstname}} {{candidate6.lastname}}<br><br>
 
 {% endfor %}<br><br>
-<h2> > Best Religious Match <span> Religion Level | Jewish Status | Torah Studying</span></h2>
+<h2> <span class="und">></span> Best Religious Match <span> Religion Level | Jewish Status | Torah Studying</span></h2><br>
 {% for candidate5 in requestcandirel %}
 
 Candidate ID N° {{candidate5.id}}
-{{candidate5.firstname}} {{candidate5.lastname}}<br>
+&#8195&#8195{{candidate5.firstname}} {{candidate5.lastname}}<br><br>
 
 {% endfor %}
 </div>

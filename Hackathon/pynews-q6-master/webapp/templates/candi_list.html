@@ -9,23 +9,52 @@
     }
     li{
         background: #543855;
-        border-radius: 10px;
-        padding: 10px;
+        border: 1px solid white;
+        border-radius: 30px;
+        padding: 18px;
+        list-style: none;
     }
     li a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+    .lica{
+        color: white;
+        text-decoration: none;
+    }
+    .lica:hover{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        background-color: rgb(197, 22, 22);
+        border-radius: 30px;
+    }
+    .lica, a:hover{
+        color: white;
+        text-decoration: none;
+    }
+    li a:hover{
+        text-decoration: none;
         color: white;
     }
     h1{
         text-align: center;
+        font-weight: bold;
+    }
+    span{
+        color: gold;
+    }
+    #idd{
+        color: gold;
     }
 </style>
 
-<h1>My Candidates</h1><br><br>
+<h1>My <span>Candidates</span></h1><br><br>
 <ol>
         {% for candi in candis %}
-    <li>
-        <a href="{{ url_for('candi_page', candi_id=candi.id) }}">{{candi.sexe}} ⎼⎼⎼⎼ {{ candi.firstname }} {{candi.lastname}} ⎼⎼⎼ {{candi.age}} years old<a/><br>
-    </li><br>
+    <a href="{{ url_for('candi_page', candi_id=candi.id) }}">
+    <li class="lica">
+        <i class="far fa-user"></i> &#8195 <span id="idd">ID°{{candi.id}}</span> ‎‎‎‎‎‎‎&#8195&#8195&#8195&#8195 {{candi.sexe}} &#8195 {{ candi.firstname }} {{candi.lastname}} &#8195 {{candi.age}} years old<br>
+    </li></a><br>
         {% endfor %}
     
 </ol>
