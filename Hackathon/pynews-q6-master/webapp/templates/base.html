@@ -23,6 +23,7 @@
     --font-color: rgb(7, 25, 108) ;
     --font-color-2: rgb(0, 0, 0) ;
     --bg-color: linear-gradient(#543855, #544455);
+    --bg2-color: linear-gradient(#543855, #544455);
     --msg-color: rgb(205, 205, 205);
     --footer-color: linear-gradient( #ff6262, #fd8080) ;
     --not-color : linear-gradient(#543855, #544455);
@@ -30,6 +31,8 @@
     --form-color: #fa676f;
     --border-color:rgb(255, 183, 199);
     --gren-color : #20bf6b;
+    --lightblk : #543855;
+    --intercolor : #543855;
     }
 
     [data-theme="dark"] {
@@ -37,12 +40,15 @@
     --font-color: #ffffff;
     --font-color-2: rgb(255, 255, 255) ;
     --bg-color: rgb(0, 0, 96);
+    --bg2-color: rgb(71, 68, 68);
     --msg-color: #000000;
     --footer-color: #000000;
     --not-color: #000000;
     --signin-color: rgb(40, 40, 40);
     --form-color: #000000;
     --border-color: #ffffff;
+    --lightblk : #ffffff;
+    --intercolor : #474747;
     }
 
 
@@ -64,7 +70,7 @@
     }
     #red{
         border: none;
-        border-radius: 10px;
+        border-radius: 30px;
         background: rgb(250, 0, 0) !important;
         margin-left: 20px;
         color: white !important;
@@ -168,8 +174,8 @@ border-radius: 50%;
         <div class="navbar-nav">
 
             {% if current_user.is_authenticated %}
-            <a class="nav-item nav-link active" href="{{url_for('profile_page', user_id = current_user.id)}}">Shalom {{ current_user.name }} <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link active" href="{{ url_for('addnew') }}">Add new candidate <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="{{url_for('profile_page', user_id = current_user.id)}}">Hey {{ current_user.name }} <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="{{ url_for('addnew') }}">Add candidate <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link active" href="{{ url_for('messages') }}">Messages <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link active" id="red" href="{{ url_for('signout') }}">Sign Out <span class="sr-only">(current)</span></a>
 
@@ -218,17 +224,31 @@ border-radius: 50%;
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
 function switchTheme(e) {
+    
     if (e.target.checked) {
         document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
+        localStorage.setItem('theme', 'dark'); //add this
     }
     else {
         document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
+        localStorage.setItem('theme', 'light'); //add this
     }    
+    
+}
+toggleSwitch.addEventListener('change', switchTheme, true);
+
+
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+    }
 }
 
-toggleSwitch.addEventListener('change', switchTheme, false);
+
 
 
 </script>

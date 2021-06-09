@@ -21,7 +21,7 @@
         padding: 10px;
         border: 1px solid white;
         border-radius: 30px;
-        background-color: #543855;
+        background-color: var(--intercolor);
         
         /* height: 1100px; */
         /* padding: 20px; */
@@ -53,7 +53,10 @@
     }
     .title{
         text-align: center;
-        font-weight: bold;
+        color: rgb(177, 38, 38);
+        font-style: italic;
+
+        
     }
     .firstb{
         margin-top: 75px;
@@ -139,15 +142,22 @@
     #p{
         float: left;
     }
+    #gold{
+        color: gold;
+    }
+    .section{
+        font-weight: bold;
+    }
 
 
 
 </style>
 
 <div class="block">
-<h2 class="title">
-        Complete the profile below ↓<br><br> Don't forget any forms !
-</h2><br>
+<h1 class="section">Adding a new <span id="gold">candidate</span></h1><br>
+<h3 class="title">
+    Don't forget any fields !
+</h3><br>
 <form action="" method="POST">
     {{ form.hidden_tag() }}
     

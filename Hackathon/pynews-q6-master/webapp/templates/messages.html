@@ -22,7 +22,7 @@
         color: black;
         border-radius: 30px;
         background-color: var(--msg-color);
-        border: 2px solid #543855;
+        border: 2px solid var(--intercolor);;
         position: relative;
         left: 200px;
         height: 550px;
@@ -31,7 +31,7 @@
         bottom: 550px;
         overflow-x: hidden;
         overflow-y: auto;
-        box-shadow: 0 0 9px #543855 ;
+        box-shadow: 0 0 9px var(--intercolor); ;
     
     }
     .not-area{
@@ -41,8 +41,8 @@
         right: 10px;
         height: 550px;
         top: 0px;
-        border-radius: 10px;
-        background: var(--not-color);
+        border-radius: 30px;
+        background: var(--bg2-color);
         color: white;
         padding: 10px;
         font-family:'Kanit', sans-serif;
@@ -62,8 +62,8 @@
         height: 590px;
         padding: 20px;
         margin-right: 200px !important;
-        background: var(--bg-color);
-        box-shadow: 0 0 8px #543855 ;
+        background: var(--bg2-color);
+        box-shadow: 0 0 8px var(--intercolor); ;
         
     }
     .form{
@@ -146,7 +146,7 @@
         color: rgb(106, 106, 106);
     }
     #str{
-        color:#543855!important;
+        color: var(--lightblk)!important;
     }
     #msg span #date-time{
         color: black;
@@ -164,12 +164,12 @@
     <div class="not-area">
         
         
-        <strong>Welcome {{current_user.name}}</strong><br><br>
+        <strong>Welcome {{current_user.name}}</strong><br><br><br>
         <!-- <p> > {{current_user.name}} connected succesfully</p> -->
         {% for user in all_users %}
             <p>{{user.name}} is connected</p>
         {%endfor%}
-        <p id="conn">You're connected to the Room :<br> <span id="room">Chat-channel</span></p>
+        <p id="conn">You're connected to the Room :<br> <br><span id="room">MatchM-channel</span></p>
         <button type="button" class="btn btn-danger" id="btnso"><a href="{{url_for('signout')}}">Sign Out</a></button>
 
         

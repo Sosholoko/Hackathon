@@ -43,12 +43,20 @@
         .btn{
             text-align: center;
         }
+        .about-me__img{
+            /* opacity: 90%; */
+            background: var(--clr-accent);
+        }
+        #v{
+            position: relative;
+            top: 3px;
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="../index.html"><img id="imlogo" src="../Projects/logo2.png" alt="" height="50px" width="50px"></a><p> > de▽Snake</p>
+            <a href="../index.html"><img id="imlogo" src="../Projects/logo2.png" alt="" height="50px" width="50px"></a><p> > de<span id="v">▽</span>snake_</p>
         </div>
         <button class="nav-toggle" aria-label="toggle navigation">
             <span class="hamburger"></span>
@@ -56,9 +64,9 @@
         <nav class="nav">
             <ul class="nav__list">
                 <li class="nav__item"><a href="../index.html" class="nav_link">Home</a></li>
-                <li class="nav__item"><a href="#projects" class="nav_link">Projects</a></li>
-                <li class="nav__item"><a href="#about" class="nav_link">About me</a></li>
-                <li class="nav__item"><a href="#work" class="nav_link">Contact</a></li>
+                <li class="nav__item"><a href="#project" class="nav_link">What does it do ?</a></li>
+                <li class="nav__item"><a href="#about" class="nav_link">What is it ? </a></li>
+                <li class="nav__item"><a href="#work" class="nav_link">Screenshots</a></li>
             </ul>
         </nav>
     </header>
@@ -100,10 +108,10 @@
         <div class="about-me__body">
             <p>Match Up Tool is a website that will allow Matchmakers to handle most of their job. After creating a free account, it will be possible to add new candidates to their personals lists and find the best match for everyone.</p>
             <p>Two mains features will make this possible. With the Messaging and the MatchFind features, matching peoples has never been that easy and comfortable !  </p>
-            <p>Techs Used : HTML / CSS / Bootstrap / Python / Javascript / Flask / SQLACHEMY / Sqlite3</p>
+            <p>Techs Used : HTML / CSS / SASS / Bootstrap / Python / Javascript / Flask / SQLACHEMY / Sqlite3</p>
         </div>
         <img src="../logos/codeport3.png" alt="Picture of me" height="380px" width="340px" class="about-me__img">
-        <br><a class="btn" href="#"><i class="fab fa-github"></i> LOOK CODE</a>
+        <br><a class="btn" href="https://github.com/Sosholoko/Hackathon/tree/main/Hackathon/pynews-q6-master"><i class="fab fa-github"></i> LOOK CODE</a>
     </section>
 
 
@@ -114,13 +122,12 @@
 
         <div class="portfolio">
             <a href="#" class="portfolio__item">
-                <img src="../logos/matchuplogo2.png" alt="Match⚭Up®" class="portfolio__img">
                 <img src="../matchuppicture/homemu.png" alt="Match⚭Up®" class="portfolio__img">
                 <img src="../matchuppicture/signupmu.png" alt="Match⚭Up®" class="portfolio__img">
                 <img src="../matchuppicture/loginmu.png" alt="Match⚭Up®" class="portfolio__img">
-                <img src="../matchuppicture/dashmu.png" alt="Match⚭Up®" class="portfolio__img">
+                <img src="../matchuppicture/screen dash.png" alt="Match⚭Up®" class="portfolio__img">
                 <img src="../matchuppicture/messagemu.png" alt="Match⚭Up®" class="portfolio__img">
-                <img src="../matchuppicture/candimu.png" alt="Match⚭Up®" class="portfolio__img">
+                <img src="../matchuppicture/screen candi.png" alt="Match⚭Up®" class="portfolio__img">
                 <img src="../matchuppicture/matchmu.png" alt="Match⚭Up®" class="portfolio__img">
             </a>
         </div>
@@ -129,10 +136,9 @@
     <footer>
         <a href="mailto:sashakharoubi@gmail.com" class="footer-link">Mail me by Clicking here !</a>
         <ul class="social-list">
-            <li class="social-list__item"><a class="social-list__link" href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-            <li class="social-list__item"><a class="social-list__link" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-            <li class="social-list__item"><a class="social-list__link" href="#"><i class="fab fa-github"></i> GitHub</a></li>
-            <li class="social-list__item"><a class="social-list__link" href="#"><i class="fab fa-linkedin-in"></i> LinkDin</a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://www.reddit.com/user/MikeyMike555/"><i class="fab fa-reddit"></i> Reddit</a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://github.com/Sosholoko"><i class="fab fa-github"></i> GitHub</a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://www.linkedin.com/in/sasha-kharoubi-516073213/"><i class="fab fa-linkedin-in"></i> LinkDin</a></li>
         </ul>
     </footer>
 

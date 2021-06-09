@@ -46,7 +46,7 @@
             color: white;
         }
         .btn{
-            background-color: white;
+            background-color: var(--clr-accent);
         }
         .my-projects{
             background-image: none;
@@ -54,12 +54,16 @@
         .btn{
             text-align: center;
         }
+        #v{
+            position: relative;
+            top: 3px;
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="../index.html"><img id="imlogo" src="../Projects/logo2.png" alt="" height="50px" width="50px"></a><p> > de▽Snake</p>
+            <a href="../index.html"><img id="imlogo" src="../Projects/logo2.png" alt="" height="50px" width="50px"></a><p> > de<span id="v">▽</span>snake_</p>
         </div>
         <button class="nav-toggle" aria-label="toggle navigation">
             <span class="hamburger"></span>
@@ -67,9 +71,9 @@
         <nav class="nav">
             <ul class="nav__list">
                 <li class="nav__item"><a href="../index.html" class="nav_link">Home</a></li>
-                <li class="nav__item"><a href="#projects" class="nav_link">Projects</a></li>
-                <li class="nav__item"><a href="#about" class="nav_link">About me</a></li>
-                <li class="nav__item"><a href="#work" class="nav_link">Contact</a></li>
+                <li class="nav__item"><a href="#project" class="nav_link">What does it do ?</a></li>
+                <li class="nav__item"><a href="#about" class="nav_link">What is it ?</a></li>
+                <li class="nav__item"><a href="#work" class="nav_link">Screenshots</a></li>
             </ul>
         </nav>
     </header>
@@ -88,15 +92,15 @@
         <div class="projects">
             <div class="project">
                 <h3>Children Friendly</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio harum architecto labore molestiae dicta voluptatum quos, porro eveniet totam obcaecati accusantium recusandae libero dolor officiis sunt soluta sed voluptates inventore.</p>
+                <p>This project was developed in the idea to be used by children. My little nephew who loves play some music with objects around him gave me the idea of Tap Type Music. Commands and features have been implemented as simple and obvious as possible for anyone to play easily ! </p>
             </div>
             <div class="project">
                 <h3>Interactivity</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem porro at officiis magnam eligendi similique fuga, quia quasi reprehenderit accusamus deleniti. Odit quia iure eum reprehenderit ea consectetur modi nam!</p>
+                <p>I wanted something simple and easy to use, that any child could understand quickly. Vivic and vibrants colors was obvious as well as big characters and buttons for them to rapidly learn the commands and start playing ! Each time a sound is played, little colored balls will pop out of the screen to add some fun. </p>
             </div>
             <div class="project">
                 <h3>Music</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum aut esse voluptates qui rem nesciunt nisi placeat harum! Mollitia nulla ducimus fugit perspiciatis possimus, debitis quasi voluptatibus quod ea corporis.</p>
+                <p>As I am myself far from being a musician, I decided to go for simple sounds to play and differents simple loops of music to go with. For playing it, sound can be clicked or keypressed according to preference. Some animations will implements the whole and make the website interactive and pleasing to the eyes !  </p>
             </div>
         </div>
 
@@ -109,12 +113,14 @@
         <p class="section__subtitle section__subtitle--about">Website Template for Clothing</p>
 
         <div class="about-me__body">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio ut quod facilis ipsa obcaecati culpa excepturi totam, ullam nulla reiciendis reprehenderit consectetur aspernatur neque sunt quis voluptatem ratione corrupti repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur illum enim totam libero assumenda dolore aliquam, in at doloribus est ab maiores corrupti odit? Deleniti ea architecto aut natus. Incidunt.</p>
+            <p>First kinda "big" Javascript project for me to realize. It was a really funny time doing it. Tap Type Music can be described as a Musical app for children. </p>
+            <p>After choosing a musical ambiance to start with, user can start play differents sounds through keyboards shortcuts or tiles clicking. The "Goal" for a player is trying to make a descent new music with the differents options</p>
+
+            <p>Techs Used : HTML / CSS / Javascript</p>
         </div>
 
         <img src="../logos/codeport3.png" alt="Picture of me" height="380px" width="340px" class="about-me__img">
-        <br><a class="btn" href="#"><i class="fab fa-github"></i> LOOK CODE</a>
+        <br><a class="btn" href="https://github.com/Sosholoko/Hackathon/tree/main/Hackathon/Music%20App"><i class="fab fa-github"></i> LOOK CODE</a>
     </section>
 
 
@@ -134,10 +140,9 @@
     <footer>
         <a href="mailto:sashakharoubi@gmail.com" class="footer-link">Mail me by Clicking here !</a>
         <ul class="social-list">
-            <li class="social-list__item"><a class="social-list__link" href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-            <li class="social-list__item"><a class="social-list__link" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-            <li class="social-list__item"><a class="social-list__link" href="#"><i class="fab fa-github"></i> GitHub</a></li>
-            <li class="social-list__item"><a class="social-list__link" href="#"><i class="fab fa-linkedin-in"></i> LinkDin</a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://www.reddit.com/user/MikeyMike555/"><i class="fab fa-reddit"></i> Reddit</a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://github.com/Sosholoko"><i class="fab fa-github"></i> GitHub</a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://www.linkedin.com/in/sasha-kharoubi-516073213/"><i class="fab fa-linkedin-in"></i> LinkDin</a></li>
         </ul>
     </footer>
 

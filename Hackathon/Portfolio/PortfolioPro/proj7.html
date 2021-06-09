@@ -54,12 +54,16 @@
         .btn{
             text-align: center;
         }
+        #v{
+            position: relative;
+            top: 3px;
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="../index.html"><img id="imlogo" src="../Projects/logo2.png" alt="" height="50px" width="50px"></a><p> > de▽Snake</p>
+            <a href="../index.html"><img id="imlogo" src="../Projects/logo2.png" alt="" height="50px" width="50px"></a><p> > de<span id="v">▽</span>snake_</p>
         </div>
         <button class="nav-toggle" aria-label="toggle navigation">
             <span class="hamburger"></span>
@@ -67,9 +71,9 @@
         <nav class="nav">
             <ul class="nav__list">
                 <li class="nav__item"><a href="../index.html" class="nav_link">Home</a></li>
-                <li class="nav__item"><a href="#projects" class="nav_link">Projects</a></li>
-                <li class="nav__item"><a href="#about" class="nav_link">About me</a></li>
-                <li class="nav__item"><a href="#work" class="nav_link">Contact</a></li>
+                <li class="nav__item"><a href="#project" class="nav_link">What does it do ?</a></li>
+                <li class="nav__item"><a href="#about" class="nav_link">What is it ?</a></li>
+                <li class="nav__item"><a href="#work" class="nav_link">Screenshots</a></li>
             </ul>
         </nav>
     </header>
@@ -88,15 +92,15 @@
         <div class="projects">
             <div class="project">
                 <h3>Social</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio harum architecto labore molestiae dicta voluptatum quos, porro eveniet totam obcaecati accusantium recusandae libero dolor officiis sunt soluta sed voluptates inventore.</p>
+                <p>Creating a Bot Software can be for many differents usages, but the Social part was definitly the most amusing and fun choice to make. For that I chose Twitter wich like instagram have a really high demand for automation Bots.</p>
             </div>
             <div class="project">
                 <h3>Fast & Easy</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem porro at officiis magnam eligendi similique fuga, quia quasi reprehenderit accusamus deleniti. Odit quia iure eum reprehenderit ea consectetur modi nam!</p>
+                <p>When I had the idea for this project, I needed something easy and quick to use, not too many options to lose the average user. I then chose to let the user type his credentials and let him choose between Like or Retweet according to a picked topic for the user to choose. </p>
             </div>
             <div class="project">
                 <h3>Automation</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum aut esse voluptates qui rem nesciunt nisi placeat harum! Mollitia nulla ducimus fugit perspiciatis possimus, debitis quasi voluptatibus quod ea corporis.</p>
+                <p>A bot, as it's name tells, is basically a robot. A robot that will complete the tasks you asked for, and doing it in the most transparent way. My Twibot will like or retweet tweets by itself and wont stop until you choose to, it can run for an entire night for example !  </p>
             </div>
         </div>
 
@@ -109,12 +113,13 @@
         <p class="section__subtitle section__subtitle--about">Auto Like & Retweet for Twitter</p>
 
         <div class="about-me__body">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio ut quod facilis ipsa obcaecati culpa excepturi totam, ullam nulla reiciendis reprehenderit consectetur aspernatur neque sunt quis voluptatem ratione corrupti repudiandae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur illum enim totam libero assumenda dolore aliquam, in at doloribus est ab maiores corrupti odit? Deleniti ea architecto aut natus. Incidunt.</p>
+            <p>I've always been fascinated by automation / cheats little softwares. So when I thought about a project to realize, a bot was the natural choice for me to make. I never tried a project like that and it was really exciting to go and try that ! I wanted something cool and actually usefull for a certain type of people.</p>
+            <p>Twibot was at first easy to build, Tkinter was pretty easy to understand for a new one, and I rapidly had a pretty cool GUI. But quicky I had to find the way of targetting likes and retweets according to a topic. I used Selelium for browser automation and it worked well ! After solving out the issues, seeing the program works as predicted was a real pleasure ! </p>
+            <p>Techs Used : Python / Tkinter / Selenium </p>
         </div>
 
         <img src="../logos/codeport3.png" alt="Picture of me" height="380px" width="340px" class="about-me__img">
-        <br><a class="btn" href="#"><i class="fab fa-github"></i> LOOK CODE</a>
+        <br><a class="btn" href="https://github.com/Sosholoko/PrivateSOSHO/tree/main/TwiBot"><i class="fab fa-github"></i> LOOK CODE</a>
     </section>
 
 
@@ -134,10 +139,9 @@
     <footer>
         <a href="mailto:sashakharoubi@gmail.com" class="footer-link">Mail me by Clicking here !</a>
         <ul class="social-list">
-            <li class="social-list__item"><a class="social-list__link" href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-            <li class="social-list__item"><a class="social-list__link" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-            <li class="social-list__item"><a class="social-list__link" href="#"><i class="fab fa-github"></i> GitHub</a></li>
-            <li class="social-list__item"><a class="social-list__link" href="#"><i class="fab fa-linkedin-in"></i> LinkDin</a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://www.reddit.com/user/MikeyMike555/"><i class="fab fa-reddit"></i> Reddit</a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://github.com/Sosholoko"><i class="fab fa-github"></i> GitHub</a></li>
+            <li class="social-list__item"><a class="social-list__link" href="https://www.linkedin.com/in/sasha-kharoubi-516073213/"><i class="fab fa-linkedin-in"></i> LinkDin</a></li>
         </ul>
     </footer>
 

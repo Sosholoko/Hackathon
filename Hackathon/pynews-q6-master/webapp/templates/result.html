@@ -19,7 +19,7 @@
         color: gold;
     }
     .results{
-        background-color: #543855c2;
+        background-color: var(--intercolor);
         padding: 30px;
         border-radius: 30px;
         border: solid 1px white;
@@ -35,7 +35,7 @@
         color: white;
         padding: 10px;
         text-decoration: none;
-        box-shadow: 0 0 36px rgb(255, 81, 62) ;
+        box-shadow: 0 0 26px rgb(255, 81, 62) ;
     }
     #back a{
         text-decoration: none;
@@ -75,7 +75,7 @@
 
 Candidate ID N°{{candidate.id}}
 
-&#8195&#8195&#8195<span id="winner">{{candidate.firstname }} {{ candidate.lastname}}</span><br>
+&#8195&#8195&#8195<span id="winner">{{candidate.firstname }} {{ candidate.lastname}}</span>&#8195&#8195 +972 {{candidate.phone}}<br>
 
 
 {% endfor %}<br><br><br>

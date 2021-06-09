@@ -24,7 +24,7 @@
         
         padding: 20px;
         border-radius: 30px;
-        background-color: #543855;
+        background-color: var(--intercolor);
         border: 1px solid white;
         width: 300px;
     }
@@ -43,7 +43,7 @@
         left: 400px; */
         padding: 20px;
         border-radius: 30px;
-        background-color: #543855;
+        background-color: var(--intercolor);
         border: 1px solid white;
         width: 300px;
     }
@@ -53,7 +53,7 @@
         left: 800px; */
         padding: 20px;
         border-radius: 30px;
-        background-color: #543855;
+        background-color: var(--intercolor);
         border: 1px solid white;
         width: 300px;
         height: 650px;
@@ -110,7 +110,7 @@
         padding: 10px;
         text-decoration: none;
         animation: 1s ease;
-        box-shadow: 0 0 36px rgb(255, 81, 62) ;
+        box-shadow: 0 0 26px rgb(255, 81, 62) ;
     }
     #back a{
         text-decoration: none;
@@ -133,24 +133,25 @@
         font-weight: bold;
     }
     
+    
 </style>
 
 <a id="back" href="{{ url_for('candi_list')}}">⌫Back</a>
 
-<h1 id="name"> {{candi.firstname}}  <span id="gold"> {{candi.lastname}} </span></h1>
+<h1 id="name"> {{candi.firstname}}  <span id="gold"> {{candi.lastname}} </span></h1><br>
 
 <div class="block">
     <div class="candidate_space">
         <div class="credentials">
-            <h3 class="tit">General Infos</h3> <br><br>
+            <h3 class="tit"><i class="fas fa-sliders-h"></i> General Infos</h3> <br><br>
             Profile N°{{candi.id}}<br>
             Sexe : {{candi.sexe}}<br>
             Firstname : {{candi.firstname}}<br>
             Lastname : {{candi.lastname}}<br><br>
             Phone Number : +972 {{candi.phone}}<br>
             Mail : {{candi.mail}}<br>
-            Age : {{candi.age}}<br>
-            Height : {{candi.height}}<br><br>
+            Age : {{candi.age}} years old<br>
+            Height : {{candi.height}} cm<br><br>
             Living City : {{candi.location}}<br>
             Nationality : {{candi.nationality}}<br>
             Origin : {{candi.origin}}<br><br>
@@ -162,7 +163,7 @@
 
         </div>
         <div class="appearance">
-            <h3 class="tit">Physical Appearance</h3> <br><br>
+            <h3 class="tit"><i class="fas fa-universal-access"></i> Other details</h3> <br><br>
             Eye Color : {{candi.eye_color}}<br>
             Hair Color : {{candi.hair_color}}<br>
             Body Size : {{candi.body}}<br><br>
@@ -177,7 +178,7 @@
             Mother Origin :{{candi.mother_origin}}<br>
         </div>
         <div class="wanted">
-            <h3 class="tit-1">Wanted Profile</h3> <br><br>
+            <h3 class="tit-1"><i class="fas fa-fire"></i> Wanted Profile</h3> <br><br>
             <h3>Physical Appearance</h3> <br><br>
             Wanted Sexe : {{candi.sexe_1}}<br>
             Wanted Eye Color : {{candi.eye_color_1}}<br>

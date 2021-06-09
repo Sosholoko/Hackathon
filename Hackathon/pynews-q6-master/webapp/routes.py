@@ -86,6 +86,7 @@ def addnew():
             db.session.add(newCandidate)
             db.session.commit()
             flask.flash("You added a new candidate to your list", "success")
+            
         else:
             flask.flash("You haven't fill the entire form correctly, try again !", "danger")
     
